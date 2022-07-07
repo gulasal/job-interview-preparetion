@@ -7,14 +7,18 @@ Output: 2, nums = [2,2,_,_]
 Explanation: Your function should return k = 2, with the first two elements of nums being 2.
 It does not matter what you leave beyond the returned k (hence they are underscores).
 """
- 
-def removeElement (nums, val) -> int:
-    for i in nums:
-        if i == val:
-            nums.remove(i)
-            return len(nums), f"nums = {nums}" 
-            
-            
-            
+def removeElement(nums, val) -> int:
+    length = len(nums)
+    i = 0
+    while length > i:
+        if nums[i] == val:
+            del nums[i]
+            length -= 1
+        else:
+            i += 1    
 
-print(removeElement([3, 2, 2, 3], 3))
+    return len(nums), nums
+    
+    
+print(removeElement([3,2,2,3], 3))
+

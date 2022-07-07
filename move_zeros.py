@@ -11,25 +11,20 @@ def moveZeroes(nums):
     """
     Do not return anything, modify nums in-place instead.
     """
-    start_num = 0
-    end_num = len(nums) - 1
-    count = 0
     
-    while (start_num <= end_num):
-        if nums[start_num] != 0:
-            start_num += 1
-        if nums[end_num] != 0:
-            
-            nums[start_num], nums[end_num] = nums[end_num], nums[start_num]
-            start_num += 1
-            end_num -= 1
-            
-        else:
-            end_num -= 1
-        
+    
+    target = 0
+    for i in range(len(nums)):
+        if nums[i] != 0:
+            nums[target], nums[i] = nums[i], nums[target]  # Partitioning the array
+            target += 1
+    return nums  
+
+
 
             
-    return nums
+
+    
 
 print(moveZeroes([0,1,0,3,12]))
     
