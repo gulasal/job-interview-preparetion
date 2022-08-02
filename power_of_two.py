@@ -7,3 +7,4 @@ def isPowerOfTwo(n):
             n = n // 2
              
         return True
+print(isPowerOfTwo(100))
